@@ -1,6 +1,0 @@
-# Edit the file's extesion to sh and run it in your server to protect brute force ssh
-/sbin/iptables -A INPUT  -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH
-/sbin/iptables -A INPUT  -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 --rttl --name SSH -j LOG --log-prefix 'SSH-HIT-RATE: '
-/sbin/iptables -A INPUT  -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 --rttl --name SSH -j DROP
-
-echo "----D.O.N.E-------"
